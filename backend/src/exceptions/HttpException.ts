@@ -8,3 +8,9 @@ export class HttpException extends Error {
     this.message = message;
   }
 }
+
+export const customError = message => {
+  const err = new Error();
+  err.message = message;
+  return err;
+};

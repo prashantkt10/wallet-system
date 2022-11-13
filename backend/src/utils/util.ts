@@ -17,3 +17,20 @@ export const isEmpty = (value: string | number | object): boolean => {
     return false;
   }
 };
+
+export const roundAccurately = (number, decimalPlaces): number => {
+  return Number(Math.round(<any>(number + 'e' + decimalPlaces)) + 'e-' + decimalPlaces);
+};
+
+export const getSkipLimit = (skip: number, limit: number) => {
+  const data = { skip: 0, limit: 0 };
+  if (isNaN(skip) || skip < 0) {
+    data.skip = 0;
+  }
+  if (isNaN(limit) || limit < 0) {
+    data.limit = 10;
+  } else if (limit > 20) {
+    data.limit = 20;
+  }
+  return data;
+};
