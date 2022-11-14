@@ -25,7 +25,14 @@ class TransactionService {
 
   public async getTransaction(walletId: any, qskip: any, qlimit: any) {
     const { skip, limit } = getSkipLimit(qskip, qlimit);
-    return this.transactions.find({ wallet_id: walletId }).skip(skip).limit(limit);
+    const [transactions, transactionsCount] = await Promise.all([
+      this.transactions.find({ wallet_id: walletId }).skip(skip).limit(limit),
+      this.transactions.count({ wallet_id: walletId }),
+    ]);
+    return {
+      transactions,
+      transactionsCount,
+    };
   }
 }
 
