@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from 'express';
-import { Wallet } from '@interfaces/wallet.interface';
-import WalletService from '@services/wallet.service';
-import { Transaction } from '@/interfaces/transactions.interface';
-import { roundAccurately } from '@/utils/util';
+import { Wallet } from '../interfaces/wallet.interface';
+import WalletService from '../services/wallet.service';
+import { Transaction } from '../interfaces/transactions.interface';
+import { roundAccurately } from '../utils/util';
 
 class WalletController {
   public walletService = new WalletService();

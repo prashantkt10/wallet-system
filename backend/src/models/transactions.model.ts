@@ -1,6 +1,6 @@
 import { model, Schema, Document } from 'mongoose';
-import { Transaction } from '@interfaces/transactions.interface';
-import { TransactionType } from '@/constants/constants';
+import { Transaction } from '../interfaces/transactions.interface';
+import { TransactionType } from '../constants/constants';
 
 const transactionsSchema: Schema = new Schema(
   {

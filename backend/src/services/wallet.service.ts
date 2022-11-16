@@ -1,10 +1,10 @@
-import { Wallet } from '@/interfaces/wallet.interface';
-import { customError, HttpException } from '@exceptions/HttpException';
-import walletModel from '@models/wallet.model';
-import { roundAccurately } from '@utils/util';
+import { Wallet } from '../interfaces/wallet.interface';
+import { customError, HttpException } from '../exceptions/HttpException';
+import walletModel from '../models/wallet.model';
+import { roundAccurately } from '../utils/util';
 import TransactionService from './transactions.service';
 import mongoose, { ClientSession } from 'mongoose';
-import { Transaction } from '@/interfaces/transactions.interface';
+import { Transaction } from '..//interfaces/transactions.interface';
 
 class UserService {
   private wallets = walletModel;

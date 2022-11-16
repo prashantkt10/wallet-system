@@ -1,8 +1,8 @@
-import { HttpException } from '@exceptions/HttpException';
-import transactionModel from '@models/transactions.model';
-import { getSkipLimit } from '@utils/util';
-import { TransactionType } from '@/constants/constants';
-import { Transaction } from '@/interfaces/transactions.interface';
+import { HttpException } from '../exceptions/HttpException';
+import transactionModel from '../models/transactions.model';
+import { getSkipLimit } from '../utils/util';
+import { TransactionType } from '../constants/constants';
+import { Transaction } from '../interfaces/transactions.interface';
 
 class TransactionService {
   public transactions = transactionModel;

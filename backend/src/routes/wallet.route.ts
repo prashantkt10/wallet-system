@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { Routes } from '@interfaces/routes.interface';
-import validationMiddleware from '@middlewares/validation.middleware';
-import WalletController from '@/controllers/wallet.controller';
-import { AddTransactionBodyDto, AddTransactionParamDto, GetWalletDto, SetupWalletDto } from '@/dtos/wallet.dto';
+import { Routes } from '../interfaces/routes.interface';
+import validationMiddleware from '../middlewares/validation.middleware';
+import WalletController from '../controllers/wallet.controller';
+import { AddTransactionBodyDto, AddTransactionParamDto, GetWalletDto, SetupWalletDto } from '../dtos/wallet.dto';
 
 class WalletRoute implements Routes {
   public path = '/wallet';

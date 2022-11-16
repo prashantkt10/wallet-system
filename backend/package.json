@@ -1,19 +1,15 @@
 {
-  "name": "backend2",
+  "name": "wallet-backend",
   "version": "0.0.0",
-  "description": "TypeScript + Mongoose + MongoDB + Express API Server",
-  "author": "",
+  "description": "Wallet System",
+  "author": "Prashant",
   "license": "ISC",
   "scripts": {
-    "start": "npm run build && cross-env NODE_ENV=production node dist/server.js",
     "dev": "cross-env NODE_ENV=development nodemon",
-    "build": "swc src -d dist --source-maps --copy-files",
-    "build:tsc": "tsc && tsc-alias",
-    "test": "jest --forceExit --detectOpenHandles",
+    "build": "tsc",
     "lint": "eslint --ignore-path .gitignore --ext .ts src/",
     "lint:fix": "npm run lint -- --fix",
-    "deploy:prod": "npm run build && pm2 start ecosystem.config.js --only prod",
-    "deploy:dev": "pm2 start ecosystem.config.js --only dev"
+    "deploy:dev": "npm run build && pm2 start ecosystem.config.js --only dev"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",

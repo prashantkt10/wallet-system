@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import TransactionService from '@services/transactions.service';
+import TransactionService from '../services/transactions.service';
 
 class WalletController {
   public transactionService = new TransactionService();
