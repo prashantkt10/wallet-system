@@ -49,7 +49,7 @@ function Home() {
     const [transactionDescription, setDescription] = useState('');
     const [showAlert, setShowAlert] = useState(false);
     const hasMounted = useRef(false);
-    const host = `http://localhost:3000`;
+    const host = `http://139.59.23.113:3000`;
 
     const getTransactions = async () => {
         return axios.get(`${host}/transactions?wallet_id=${localStorage.getItem('wallet_id')}&skip=${skipTransactions}&limit=${transactionLimit}`);

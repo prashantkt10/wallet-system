@@ -12,7 +12,7 @@ function SetupWallet() {
     const [username, setUsername] = useState('');
     const [amount, setAmount] = useState(20);
 
-    const host = `http://localhost:3000`;
+    const host = `http://139.59.23.113:3000`;
 
     const setupWallet = async () => {
         const body = {
