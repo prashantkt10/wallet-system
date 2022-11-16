@@ -7,6 +7,7 @@ import {
 }
     from 'react-bootstrap';
 import axios from 'axios';
+import { roundAccurately } from '../utils/utils';
 
 function SetupWallet() {
     const [username, setUsername] = useState('');
@@ -15,9 +16,10 @@ function SetupWallet() {
     const host = `http://139.59.23.113:3000`;
 
     const setupWallet = async () => {
+        if (!username || username.length < 2 || Number.isNaN(Number(amount))) return;
         const body = {
-            "name": username,
-            "balance": amount
+            "name": String(username),
+            "balance": roundAccurately(Number(amount))
         }
         await axios.post(`${host}/wallet/setup`, body).then((data) => {
             localStorage.setItem('wallet_id', data.data.data.id);
