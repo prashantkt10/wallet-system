@@ -16,7 +16,7 @@ function SetupWallet() {
     const host = `http://139.59.23.113:3000`;
 
     const setupWallet = async () => {
-        if (!username || username.length < 2 || Number.isNaN(Number(amount))) return;
+        if (!username || username.length < 2 || Number.isNaN(Number(amount)) || Number(amount)<1) return;
         const body = {
             "name": String(username),
             "balance": roundAccurately(Number(amount))

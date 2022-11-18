@@ -60,6 +60,7 @@ function Home() {
     }
 
     const doTransaction = async () => {
+      if(Number(transactionAmount)<1) return;
         const body = {
             "amount": transactionType === 'credit' ? Number(transactionAmount) : Number(transactionAmount) * -1,
             "description": transactionDescription
